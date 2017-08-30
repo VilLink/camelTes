@@ -19,6 +19,7 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableAutoConfiguration
 public class InitApp extends SpringBootServletInitializer {
 
+	//private static Class<InitApp> applicationClass = InitApp.class;
 	private static Class<InitApp> applicationClass = InitApp.class;
 
 	@Override
