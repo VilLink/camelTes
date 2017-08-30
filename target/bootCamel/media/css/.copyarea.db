@@ -1,0 +1,20 @@
+ClearCase CopyAreaDB|4
+vob18\od19\OnlineBSD\src\main\webapp\media\css
+2
+10
+13:Calendario_Info.css|1|14ebb758d24|192c|5a7ff7c0|72499ca16a0144b8adfad5d19de6f9b1|0
+d:Principal.css|1|159a8aeb0ce|204df|784e7f94|d7601877ef64434cb28d9b3338d205e4|0
+d:jquery-ui.css|1|14ebb758d15|8521|f74b0026|925d1638abd24af6848f626fc1090356|0
+12:MenuMultiNivel.css|1|1544f16b483|1b35|b064b827|e57c15b7545540fb8d7efc9a214117f2|0
+12:jsDatePick_ltr.css|1|14ebb758c2a|2316|ea8f5733|a6d3fec526214af99d2007278c9d1a81|0
+16:bootstrapValidator.css|1|14ebb758d44|1e9|aa3e995f|8ea27d7e525a4703b2ac5a4e16ad95ba|0
+f:IconsSweets.css|1|14ebb758bcd|d5dc|dce4533e|035f37daeeea4a36b353e92e34d04c68|0
+10:VentanaModal.css|1|14ebb758c98|1792|37c801fd|0b48bff8726243ae98e101791dfd8e1d|0
+15:styleWebFontIcons.css|1|15343128b64|39de|719f0b1a|7a681f13e30541048fd9d29bf0f2bb20|0
+c:DataTableCss|2|0|0|0|05011ff7feab478cb2799738d391b626|0
+15:EstilosCentralBSD.css|1|14ebb758ae2|ad6|3f20192b|39f8ee39aad44ee2b913ca7ce68194bb|0
+1a:bootstrapValidator.min.css|1|14ebb758d44|1e4|c86b9ddc|c50fe9b8480643b39e2b2623d3ec4e22|0
+d:component.css|1|14ebb758af2|46e0|5f1d52c2|5b20180b46834c399efcd9a1d6b495cb|0
+e:quickorder.css|1|1559911c05e|1061|8760c1c6|68be2d236c6e471f9b1331f43be83836|0
+c:carrusel.css|1|14ebb758b6f|1ec3|5133670b|feaca87c24f14ba384e8c02dcf77ca07|0
+11:default_Movil.css|1|14ebb758ad3|b5c|ca175352|494587f71587459ba7db205cd2c93234|0

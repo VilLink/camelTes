@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CALENDARIO DEFINITIVO</title>
+	<link rel="stylesheet" href="css/IconsSweets.css" type="text/css">
+	<link href="css/Principal.css" rel="stylesheet" type="text/css" />
+    <link href="css/Calendario_Info.css" rel="stylesheet" type="text/css" />
+<!--JQUERY-->	
+	<script src="js/jquery-1.8.2.js"></script>
+	<script src="js/jquery-ui.js"></script>
+<!-- CALENDARIO DEFINITIVO -->		
+	<script type="text/javascript"  src="Calendario/ng_all.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.multidatespicker.js"></script>
+	
+	<!-- FIN CALENDARIO DEFINITIVO -->
+	
+	<script type="text/javascript">
+		ng.ready( function() {
+			var date = new Date();
+			$('#calendar').multiDatesPicker({
+				addDates: [date]
+			});    
+		});
+	</script>
+</head>
+
+<body>
+<div id="ContentWrapper">
+	<div id="ContentContainer">
+		<div id="Content">
+        
+			<div class="Zona04">
+				<h2 class="TituloContenedorInfo"><i class="icos-month-calendar icos-white"></i>Fechas de captura</h2>
+				<div id="RegistroCliente">
+								<div id="calendar"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

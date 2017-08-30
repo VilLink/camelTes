@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: bootCamel Project
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: hcastillo
+Implementation-Vendor-Id: com.officeDepot.boot
+Build-Jdk: 1.8.0_131
+Implementation-URL: http://projects.spring.io/spring-boot/bootCamel/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

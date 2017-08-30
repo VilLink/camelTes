@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Documento sin título</title>
+<link href="css/Principal.css" rel="stylesheet" type="text/css" />
+<!--<link    href="1.2.2/assets/components/calendar/css/light_cal_style.css" rel="stylesheet" type="text/css" />
+--><script type="text/javascript">
+    // configuration value for the CSS style
+    // this can be set locally or globally
+    // review Configuration for details.
+    // uncomment the line below in your code
+    // var ng_config = {css_skin_prefix:"light_"};
+</script>
+<script type="text/javascript"  src="Calendario/ng_all.js"></script>
+<!--<script type="text/javascript"  src="1.2.2/assets/language/en/calendar.js"></script>
+--><script type="text/javascript"  src="Calendario/components/calendar.js"></script>
+<script type="text/javascript">
+ng.ready( function() {
+    // creating the calendar
+    var my_drag_cal = new ng.Calendar({
+        input:'my_drag_select_cal',
+		end_date: 'year + 100',
+        num_months:1,
+        weekend:[0,6],
+        num_col:2,
+        multi_selection:true
+    });
+    
+});
+
+ng.ready( function() {
+    // creating the calendar
+    var my_drag_cal = new ng.Calendar({
+        input:'my_drag_select_cal02',
+		start_date:"today",
+		end_date: 'year + 100',
+        num_months:1,
+        weekend:[0,6],
+        num_col:2,
+        multi_selection:false
+    });
+    
+});
+</script>
+
+</head>
+
+<body>
+Ejemplo de multi selección de fechas:
+<br><br>
+<input type="text" id="my_drag_select_cal"><br>
+<br>
+Ejemplo de solo una selección<br><br>
+<input type="text" id="my_drag_select_cal02">
+</body>
+</html>

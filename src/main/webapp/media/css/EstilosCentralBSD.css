@@ -1,0 +1,142 @@
+  
+  @font-face{
+  font-family:'FontAwesome';
+  src:url('../font/fontawesome-webfont.eot?v=3.0.1');
+  src:url('../font/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
+  url('../font/fontawesome-webfont.woff?v=3.0.1') format('woff'),
+  url('../font/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+  font-weight:normal;
+  font-style:normal }*/
+
+
+
+
+.icon-chevron-left  { color:#FFF !important;}
+.icon-chevron-right { color:#FFF !important;}	
+.icon-chevron-left a:hover { color:#FFF !important;}
+.icon-chevron-right a:hover { color:#FFF !important;}
+
+.slidesjs-previous slidesjs-navigation a {
+	
+	color:#FFF !important;
+	}
+	
+.slidesjs-next slidesjs-navigation a { 
+	
+	color: transparent !important;
+	}
+
+.icon-chevron-left img {
+	max-width: 700px;
+	z-index:10;
+	}
+	
+.icon-chevron-right img {
+	z-index:10;
+	max-width:700px;
+	}
+
+ .slidesjs-ContainerImg {
+	  z-index: 0 !important;
+	  
+    }
+
+    #slides,
+    #slides2,
+    #slides3 {
+      display: none;
+      margin-bottom:50px;
+    }
+
+    .slidesjs-navigation {
+      margin-top:3px;
+    }
+
+    .slidesjs-previous {
+      margin-right: 5px;
+      float: left;
+    }
+
+    .slidesjs-next {
+      margin-right: 5px;
+      float: left;
+    }
+
+    .slidesjs-pagination {
+      margin: 0px 0 0;
+      float: right;
+      list-style: none;
+    }
+
+    .slidesjs-pagination li {
+      float: left;
+      margin: 0 1px;
+    }
+
+    .slidesjs-pagination li a {
+      display: block;
+      width: 13px;
+      height: 0;
+      padding-top: 13px;
+      background-image: url(../Images/pagination.png);
+      background-position: 0 0;
+      float: left;
+      overflow: hidden;
+    }
+
+    .slidesjs-pagination li a.active,
+    .slidesjs-pagination li a:hover.active {
+      background-position: 0 -13px
+    }
+
+    .slidesjs-pagination li a:hover {
+      background-position: 0 -26px
+    }
+
+   
+    .navbar {
+      overflow: hidden
+    }
+	 #slides {
+      display: none;
+    }
+
+    .ContainerImg {
+      margin: 0 auto;
+	  background-color: transparent;
+	  
+    }
+
+   /* For tablets & smart phones */
+    @media (max-width: 750px) {
+      body .Imagenes {
+        padding-left: 20px;
+        padding-right: 20px;
+		
+      }
+      .ContainerImg {
+        width: auto;
+		
+      }
+    }
+
+    /* For smartphones */
+    @media (max-width: 160px) {
+      .ContainerImg {
+        width: auto;
+      }
+    }
+
+    /* For smaller displays like laptops */
+    @media (min-width: 750px) and (max-width: 750px) {
+      .ContainerImg {
+       width: 750px;
+      }
+    }
+
+    /* For larger displays */
+    @media (min-width: 750px) {
+      .ContainerImg {
+       width: 750px;
+      }
+    }

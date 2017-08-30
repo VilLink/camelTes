@@ -1,0 +1,9 @@
+ClearCase CopyAreaDB|4
+vob18\od19\OnlineBSD\src\main\webapp\media\js\datatables
+2
+5
+11:TableTools.min.js|1|14ebb75f228|722a|9d5251c0|c8403e4d1aa643b6a1a37b3c9b03dc6d|0
+21:jquery.dataTables.columnFilter.js|1|14ebb75f257|2946|39dfea02|b7cf7b9f62124db18b6ed225f0b8a060|0
+d:dataTables.js|1|14ebb75f247|359|d7d32abe|18fcef7111a6410199559b64258a894c|0
+17:dataTables.bootstrap.js|1|14ebb75f238|1119|4bdf7fc|601c191dbc8e48fd8f1e4fe69fa50747|0
+18:jquery.dataTables.min.js|1|14ebb75f2a5|11836|a5fcfa9d|73b8b80a2f6e46779e1ce634e93db604|0

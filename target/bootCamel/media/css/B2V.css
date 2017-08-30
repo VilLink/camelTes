@@ -1,0 +1,254 @@
+
+
+img {
+	border: 0;
+}
+
+#vendorInfo {
+	padding: 4px;
+}
+
+#MainContainer {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#score {
+	font-size: 20px;
+	font-weight: bolder;
+	color: #D22020;
+	font-family: Arial, Arial Narrow;
+	padding: 0px 20px 0px;
+}
+
+.tooltip {
+	margin:8px;
+	padding:8px;
+	color: black;
+	border:1px solid blue;
+	background-color:yellow;
+	position: absolute;
+	z-index: 2;
+	
+}
+
+.B2V_Table {
+	cellspacing: 0;
+	cellpadding: 0;
+	font-family: sans-serif, Arial;
+	border-width: 0px;
+	width: 95%;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	cellspacing: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+
+.B2V_Printable {
+	cellspacing: 0;
+	cellpadding: 0;
+	font-family: sans-serif, Arial;
+	border-width: 0px;
+	width: 95%;
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	cellspacing: 0px;
+	padding: 0px;
+	font-size: 10px;
+}	
+
+.errors {
+	color: #FF0000;
+	font-weight: bold;
+	font-size: 0.8em;
+}
+
+.B2V_Table .title {
+	font-size: 20px;
+	color: #990033;
+	font-weight: bold;
+	padding: 0px;
+	margin: 0px;
+}
+
+.B2V_Table .title .titletext {
+	padding: 0px 0px 10px 15px;
+	margin: 0px;
+}
+
+.B2V_Table .title .titleTop {
+	width: 100%;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.pagination {
+	clear: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.pagination .paginationBox {
+	padding: 5px;
+	width: 25px;
+	border-right: 2px solid #555;
+}
+
+.pagination .paginationBox:first-child {
+	border-right: 0px;
+}
+
+.B2V_Table .description {
+	font-weight: bold;
+	background-color: #F0F0F0;
+	padding: 5px 15px 5px 15px;
+	border-top-style: dotted;
+	border-top-color: #A0A0A0;
+	border-top-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #A0A0A0;
+	border-bottom-width: 2px;
+}
+
+.B2V_Table .descsingle {
+	font-weight: bold;
+	background-color: #F0F0F0;
+	padding: 5px 15px 5px 15px;
+}
+.B2V_Table .desctop {
+	font-weight: bold;
+	background-color: #F0F0F0;
+	padding: 5px 15px 5px 15px;
+	border-top-style: dotted;
+	border-top-color: #A0A0A0;
+	border-top-width: 2px;
+}
+.B2V_Table .descbot {
+	font-weight: bold;
+	background-color: #F0F0F0;
+	padding: 5px 15px 5px 15px;
+	border-bottom-style: solid;
+	border-bottom-color: #A0A0A0;
+	border-bottom-width: 2px;
+}
+
+.B2V_Table th {
+	/* background-color: #FF9900; */
+	background-color: #FF7700;
+	color: white;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+.B2V_Table tr {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+.B2V_Table td {
+	padding: 2px;
+	margin: 0px;
+	border: 0px;
+	height: 5px
+}
+
+.B2V_Table .tip {
+	font-size: 0.8em;
+}
+
+.B2V_Table .footer {
+	/* border-top-color: #E6E6E6; */
+	/* border-top: 10px ; */
+	/* background-color: #E0E0E0; */
+	text-align: right;
+	font-weight: bold;
+	background-color: #F0F0F0;
+	padding: 5px;
+	border-top-style: solid;
+	border-top-color: #A0A0A0;
+	border-top-width: 2px;
+}
+
+.B2V_Table .center {
+	text-align: center;
+}
+
+.B2V_Table .number {
+	text-align: right;
+}
+
+.B2V_Table .total {
+	text-align: right;
+}
+
+.button {
+	font-family:  Arial, Arial Narrow;
+	font-size: 0.9em;
+	color: #707070;
+	font-weight: bold;
+	background-image: url(../images/button_background.gif); 
+	background-position: center;
+	background-repeat: no-repeat;
+	text-align: center;
+	width: 110px;
+	text-decoration: none;
+}
+
+.button a,
+.button a:link,
+.button a:hoover {
+	text-decoration: none;
+}
+
+.B2V_Table .row1 {
+	background-color: #F6F6F6 ;
+}
+
+.B2V_Table .row2 {
+	background-color: #FF7700 ;
+}
+
+.B2V_Table .row0 {
+	background-color: #FFFFFF ;
+}
+
+.messageBox {
+	margin: 20px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #EE0033;
+	height: 40px;
+}
+
+.messageBox img {
+	float: left;
+	padding: 5px;
+	margin-right: 10px;
+}
+
+.messageInfo {
+	margin: 10px;
+	font-weight: bold;
+	/* font-size: 1.2em; */
+	/* height: 100%; */
+	/* padding: 10px; */
+}
+
+.messageError{
+	margin: 10px;
+	color: #EE0000;
+	/* font-size: 1.2em ; */
+	font-weight: bold;
+	/* padding: 10px; */
+}
+
+.messageBoxText {
+	/* float: left; */
+	vertical-align: middle;
+}

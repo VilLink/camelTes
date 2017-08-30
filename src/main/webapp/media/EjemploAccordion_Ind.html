@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Accordion - Customize icons</title>
+	<link rel="stylesheet" href="Accordion/css/Accordion.css">
+	<script src="js/jquery-1.8.2.js"></script>
+    
+	<script src="Accordion/js/jquery.ui.core.js"></script>
+	<script src="Accordion/js/jquery.ui.widget.js"></script>
+	<script src="Accordion/js/jquery.ui.accordion.js"></script>
+	<script src="Accordion/js/jquery.ui.button.js"></script>
+	
+	<script>
+	$(function() {
+		var icons = {
+			header: "ui-icon-circle-arrow-e",
+			headerSelected: "ui-icon-circle-arrow-s"
+		};
+		$( "#accordion" ).accordion({
+			icons: icons
+		});
+		$( "#toggle" ).button().toggle(function() {
+			$( "#accordion" ).accordion( "option", "icons", false );
+		}, function() {
+			$( "#accordion" ).accordion( "option", "icons", icons );
+		});
+	});
+    </script>
+	<script type="text/javascript">
+	function mostrarAcordion() {
+		$("#accordion #Visible").addClass("Acordionvisible");
+	   $(".Acordionvisible").slideDown();
+	}
+	function reiniciarAcordion() {
+		 $("div").removeClass("Acordionvisible");
+	}
+	</script>  
+    
+</head>
+<body>
+<div id="ContBtnMostOcultar">
+	<ul>
+    	<li><input class="BotonMostrar" type="button" onclick="javascript:mostrarAcordion();" value="Mostrar Todo" /> </li>
+   		<li><input class="BotonOcultar" type="button" onclick="javascript:reiniciarAcordion();" value="Ocultar" /></li>
+    </ul>
+</div>
+
+
+<div id="accordion">
+	<h3><a href="#">Section 1</a> </h3>
+	<div id="Visible">
+		<ul class="DobleColumna01">
+       		<li> 
+            	<div>este es un div contenido del lado izquierdo , puede o no ser div , en el siguiente opcion de (li) muesto texto sin contenedor div. </div>
+            </li>
+            <li>este es un ejemplo de texto sin contenedor mas que el de la lista
+            </li>
+        </ul>
+	</div>
+	<h3><a href="#">Section 2 <!--<img class="ImgTitulo" src="images/Comprar.png" width="57" height="18">--></a></h3>
+	<div id="Visible">
+		<p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
+	</div>
+	<h3><a href="#">Section 3 <!--<img class="ImgTitulo" src="images/Comprar.png" width="57" height="18">--></a></h3>
+	<div id="Visible">
+		<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>
+		<ul>
+			<li>List item one</li>
+			<li>List item two</li>
+			<li>List item three</li>
+		</ul>
+	</div>
+	<h3><a href="#">Section 4</a></h3>
+	<div id="Visible">
+		<p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est. </p><p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+        
+	</div>
+    <h3><a href="#">Section 5</a></h3>
+	<div id="Visible">
+		<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+	</div>
+</div>
+ <br>
+
+
+</body>
+</html>

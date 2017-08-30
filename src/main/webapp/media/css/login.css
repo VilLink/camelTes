@@ -1,0 +1,82 @@
+mainTableTitle {
+	color	 : #FFFFFF;
+	font-size: 15px;
+}
+
+.footerInfo{
+	font-size	:12px;	
+	font-weight : bold;
+}
+
+.mainTableTitle{
+	color			 : #FFFFFF;
+	font-size		 : 14px;	
+	text-align	     : left;
+	background-color : #FF6B24;
+	border-width	 : 0px;
+	font-weight      : bold;
+}
+
+.userData{	
+	font-size   :15px;
+	font-weight :bold;
+	margin-left : 5px;
+	text-align  :left;
+}
+table{
+	border-style: none;
+	border-width: 0px;
+}
+.mainTable{
+    border-style	    : solid;
+	border-color	    : #FF6B24;	
+	border-top-style	: none;
+	border-left-style	: solid;
+	border-right-style	: solid;
+	border-bottom-style	: solid;
+	border-top-width	: 0px;
+	border-left-width	: 1px;
+	border-right-width	: 2px;
+	border-bottom-width	: 3px;				
+}
+.sectionTitle{
+	font-size      : 16px;
+	font-weight    : bold;
+	color		   : #990033;
+}
+
+.passwordLink{
+	color           : #0000FF; 
+	text-decoration : none; 
+	font-size       : 13px;
+	font-weight     : bold
+}
+
+.errorBlackMsg{
+	font-weight : bold;
+	font-size   : 12px;
+}
+
+.errorRedMsg{
+	color		: #FF0000;
+	font-size   : 12px ;
+	font-weight : bold;
+}
+
+.dataInformationTitle{
+	font-size	:13px ;
+	text-align  :left;
+}
+
+.loginImage{
+	border-style	    : solid;
+	border-top-width    : 1px;
+	border-left-width   : 1px;
+	border-right-width  : 2px;
+	border-bottom-width : 3px;
+	
+	border-right-color  : #6D7B8D;
+	border-bottom-color : #151B54;
+	border-top-color    : #98AFC7;
+	border-left-color   : #98AFC7;
+}

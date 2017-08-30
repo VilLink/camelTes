@@ -1,0 +1,233 @@
+div#calendar {
+	font-family: Helvetica,Arial,sans-serif;
+	color: #000 ;
+}	
+	
+/* begin: jQuery UI Datepicker emphasis on selected dates */
+.ui-datepicker .ui-datepicker-calendar .ui-state-highlight a {
+	background-color: #890115 !important;
+	background-image: -webkit-linear-gradient(top,#890115,#DB4659);
+	background-image: -moz-linear-gradient(top,#890115,#DB4659);
+	background-image: -ms-linear-gradient(top,#890115,#DB4659);
+	background-image: -o-linear-gradient(top,#890115,#DB4659);
+	background-image: linear-gradient(top,#890115,#DB4659);
+	color: #fff !important;
+	-o-border-radius: 3px 3px 3px 3px;
+	-ms-border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+	font-weight: bold;
+	border: dotted #999999 1px;
+	padding:3px;
+	white-space: nowrap;
+	width:25px;
+	height:22px;
+	font-weight: bold;
+	padding:3px;
+}
+
+/* end: jQuery UI Datepicker emphasis on selected dates */
+div#calendar {
+	font-family: Helvetica,Arial,sans-serif;
+	color: #000 ;
+}
+
+div#calendar.hasDatepicker {
+	border: solid #b6bccc 1px;
+	-o-border-radius: 8px 8px 8px 8px;
+	-ms-border-radius: 8px 8px 8px 8px;
+	-moz-border-radius: 8px 8px 8px 8px;
+	-webkit-border-radius: 8px 8px 8px 8px;
+	border-radius: 8px 8px 8px 8px;
+	background: #fff;
+	display: inline-block;
+	-moz-box-shadow: 3px 3px 2px rgba(0,0,0,.3);
+	-webkit-box-shadow: 3px 3px 2px rgba(0,0,0,.3);
+	box-shadow: 3px 3px 2px rgba(0,0,0,.3);
+	padding:3px;
+	background-image: -webkit-linear-gradient(top,#F7F7F7,#FFFFFF);
+	background-image: -moz-linear-gradient(top,#F7F7F7,#FFFFFF);
+	background-image: -ms-linear-gradient(top,#F7F7F7,#FFFFFF);
+	background-image: -o-linear-gradient(top,#F7F7F7,#FFFFFF);
+	background-image: linear-gradient(top,#F7F7F7,#FFFFFF);
+}
+
+
+	
+/*************prev /mes / next*******************/
+
+.ui-datepicker-header {
+	background-color: #E1E1E1;
+	background-image: -webkit-linear-gradient(top,#FBFBFB,#E1E1E1);
+	background-image: -moz-linear-gradient(top,#FBFBFB,#E1E1E1);
+	background-image: -ms-linear-gradient(top,#FBFBFB,#E1E1E1);
+	background-image: -o-linear-gradient(top,#FBFBFB,#E1E1E1);
+	background-image: linear-gradient(top,#FBFBFB,#E1E1E1);
+	-o-border-radius: 5px 5px 5px 5px;
+	-ms-border-radius:5px 5px 5px 5px;
+	-moz-border-radius:5px 5px 5px 5px;
+	-webkit-border-radius:5px 5px 5px 5px;
+	border-radius:5px 5px 5px 5px;
+	border: 1px solid #FFF;
+	}
+.ui-datepicker-prev {
+	background-color:  transparent;
+	float:left;
+	font-size:0px;
+	color:  #f1f1f1 !important;
+	background-image:url(../Calendario/assets/components/calendar/images/right_arrow_dis.gif);
+	background-repeat:no-repeat; 
+	background-position:center !important;
+	width:30px;
+	height:18px;
+	border-right:2px solid #ffffff;
+	}
+.ui-datepicker-prev:hover {
+	background:#666;
+	background-position:center !important;
+	float:left;
+	font-size:0px;
+	color:  #f1f1f1 !important;
+	background-image:url(../Calendario/assets/components/calendar/images/right_arrow.gif);
+	background-repeat:no-repeat; 
+	width:30px;
+	height:18px;
+	}
+	
+.ui-datepicker-next {
+	background-color:  transparent;
+	font-size:0px;
+	color:  #f1f1f1 !important;
+	background-image:url(../Calendario/assets/components/calendar/images/left_arrow_dis.gif);
+	background-repeat:no-repeat;
+	background-position:center !important;
+	width:30px;
+	height:18px;
+	float:right;
+	border-left:2px solid #ffffff;
+	}
+	
+.ui-datepicker-next:hover {
+	background:#666;
+	font-size:0px;
+	color:  #f1f1f1 !important;
+	background-image:url(../Calendario/assets/components/calendar/images/left_arrow.gif);
+	background-repeat:no-repeat;
+	background-position:center !important;
+	width:30px;
+	height:18px;
+	float:right;}
+	
+div.ui-datepicker-title {
+	widows: 136px;
+	text-align: center;
+	height:20px;
+	}
+
+
+/*******termina  *prev /mes / next*******************/
+
+table.ui-datepicker-calendar {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 15px;
+	border-color: gray;
+	margin:0px;
+	white-space: nowrap;
+	padding:1px;
+	}
+table.ui-datepicker-calendar td {
+	width:25px;
+	height:22px;
+	text-align:center;
+	border-bottom: 1px solid #eeeeee;
+	
+	
+	}
+table.ui-datepicker-calendar a {
+	color:#000 !important;
+	margin:0px;
+	white-space: nowrap;
+	padding:5px;
+	
+	}
+table.ui-datepicker-calendar a:hover {
+	background: #0066FF;
+	color: #fff !important;
+	-o-border-radius: 3px 3px 3px 3px;
+	-ms-border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+	font-weight: bold;
+	margin:0px;
+	white-space: nowrap;
+	width:25px;
+	height:22px;
+	}
+table.ui-datepicker-calendar a:link {
+	color: #fff;
+	-o-border-radius: 3px 3px 3px 3px;
+	-ms-border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+	font-weight: bold;
+	margin:0px;
+	white-space: nowrap;
+	}
+	
+table.ui-datepicker-calendar thead {
+	color:#000;
+	font-size: 11px;
+	
+	}
+table.ui-datepicker-calendar thead tr th {
+	padding:3px;
+	background:#666;
+	color: #ffffff;
+	-o-border-radius: 3px 3px 3px 3px;
+	-ms-border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+	
+	}
+	
+/*	
+table.ui-datepicker-calendar .ui-state-active {
+	background-color: #890115 !important;
+	background-image: -webkit-linear-gradient(top,#890115,#DB4659);
+	background-image: -moz-linear-gradient(top,#890115,#DB4659);
+	background-image: -ms-linear-gradient(top,#890115,#DB4659);
+	background-image: -o-linear-gradient(top,#890115,#DB4659);
+	background-image: linear-gradient(top,#890115,#DB4659);
+	color: #fff !important;
+	-o-border-radius: 3px 3px 3px 3px;
+	-ms-border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+	font-weight: bold;
+	border: dotted #999999 1px;
+	padding:3px;
+	white-space: nowrap;
+	width:25px;
+	height:22px;
+	 
+}
+
+table.ui-datepicker-calendar .ui-state-active a:link {
+	color: #ffffff !important;
+	padding:3px;}
+
+table.ui-datepicker-calendar .ui-state-active a:visited {
+	color: #ffffff !important;
+	padding:3px;}
+/* end: jQuery UI Datepicker emphasis on selected dates */
+
+	
+	
+	
+	

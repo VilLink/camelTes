@@ -1,0 +1,60 @@
+
+/**************************************************************************************************/
+
+html, body{ 
+ 	margin:0; 
+ 	padding:0;
+ 
+} 
+
+#contents {
+	height:auto;
+	left:0px;
+	min-height:100%;
+	position:absolute;
+	top:0px;
+	width:100%;
+}
+
+ 
+#header{
+ 	position:relative; 
+ 	background-color:#fff; 
+ 	width:100%;
+ 	height:90px;
+} 
+
+#leftcol{
+
+ 	position:absolute; 
+	top:107x; 
+	left:0px; 
+	color:#000; 
+	background:#fff; 
+	padding:0px; 
+	margin:0; 
+	width:300px; 
+}
+#contenido{
+
+ 	display:block; 
+ 	left:0px;
+ 	padding: 10px;
+ 	background-color: #FFFFFF;
+ 	
+}
+ 
+#footer{
+ 	bottom:0px;
+	color:#FFFFFF;
+	/*position:absolute;*/
+	width:100%;
+ } 
+ 
+
+ /*printer styles*/ 
+ @media print{ 
+/*hide the left column when printing*/ 
+#leftcol{display:none;} 
+#twocols, #maincol{width:100%; float:none;}
+}

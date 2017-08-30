@@ -1,0 +1,513 @@
+var skus = new Array();
+var quantitys = new Array();
+var comparator = new Array();
+
+
+function updateMiniCart() {
+	
+	$('#loading').bind('ajaxSend', function() {
+		$(this).show();
+	}).bind('ajaxComplete', function() {
+		$(this).hide();
+	});
+	$('#minicart').html("<p>cargando ...</p>");
+	$.ajax({
+		url : "CartData",
+		type : "POST",
+		data : {},
+		success : function(response) {
+			$('#minicart').html(response);
+		},
+		error : function() {
+			$('#minicart').html("<p>error al cargar...</p>");
+		}
+	});
+}
+
+function validarEmail(email) {
+	expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if (!expr.test(email))
+		return false;
+	else
+		return true;
+}
+
+function checkoutRequest() {
+	$('#loading').bind('ajaxSend', function() {
+		$(this).show();
+	}).bind('ajaxComplete', function() {
+		$(this).hide();
+	});
+
+	$("#checkout").live('click', function() {
+		$.ajax({
+			type : 'GET',
+			url : '/OnlineBSD/Checkout',
+			success : function(response) {
+				$("#Content").html(response);
+			},
+			error : function() {
+				console.log('fuck!');
+			}
+		});
+	});
+}
+
+function comparatorItem(sku, checkbox) {
+
+	if (checkbox.checked) {
+		comparator.push(sku);
+	} else {
+		if (comparator.length == 1) {
+			comparator.pop();
+		} else {
+			var skuIdx = comparator.indexOf(sku);
+			comparator.splice(skuIdx, 1);
+		}
+	}
+
+	$('#loading').bind('ajaxSend', function() {
+		$(this).show();
+	}).bind('ajaxComplete', function() {
+		$(this).hide();
+	});
+	/*
+	 * if(comparator.length>2){ $("#Content").load(
+	 * '/OnlineBSD/comparator?skus='+comparator[0]+','+comparator[1]+','+comparator[2]+'&cache=' +
+	 * (new Date()).getTime()); }
+	 */
+}
+
+function fillComparatorItems(sku) {
+	comparator.push(sku);
+}
+
+function comparatorDeleteItem(sku, checkbox) {
+	if (checkbox.checked) {
+		if (comparator.length == 1) {
+			comparator.pop();
+		} else {
+			var skuIdx = comparator.indexOf(sku);
+			comparator.splice(skuIdx, 1);
+		}
+	} else {
+		comparator.push(sku);
+	}
+}
+
+function compareItems(button) {
+	if (comparator.length < 2 || comparator.length > 3) {
+		$(function() {
+			$("#dialog-compare-quantity").dialog({
+				minWidth : 400,
+				modal : true,
+				buttons : {
+					Ok : function() {
+						$(this).dialog("close");
+						return;
+					}
+				}
+			});
+		});
+		return;
+	}
+
+	var skus = "";
+
+	while (comparator.length > 0) {
+		skus = skus.concat(comparator.shift() + ",");
+	}
+	skus = skus.substring(0, skus.lastIndexOf(","));
+	$("#Content").load(
+			'/OnlineBSD/comparator?skus=' + skus + '&cache='
+					+ (new Date()).getTime());
+}
+
+function compareDeleteItems(button) {
+	var skus = "";
+	while (comparator.length > 0) {
+		skus = skus.concat(comparator.shift() + ",");
+	}
+	skus = skus.substring(0, skus.lastIndexOf(","));
+	$("#Content").load(
+			'/OnlineBSD/comparator?skus=' + skus + '&cache='
+					+ (new Date()).getTime());
+}
+
+$(function() {
+	$("#linkID").live('click', function() {
+		$(this).prop('href', "/OnlineBSD/index?logout=false");
+	});
+});
+
+function pushItem(sku, quantity, comment, maxQuantity, existencia, business) {
+	if (maxQuantity != 0 && maxQuantity < parseInt(quantity.val())) {
+		$(function() {
+			$("#dialog-message-maxQuantity-" + sku).dialog({
+				minWidth : 400,
+				modal : true,
+				buttons : {
+					Ok : function() {
+						$(this).dialog("close");
+						return;
+					}
+				}
+			});
+		});
+		return;
+	}
+
+	if (business.val() == 'ODM') {
+		if (parseInt(quantity.val()) > 0
+				&& parseInt(quantity.val()) <= existencia) {
+			if (parseInt(sku) && parseInt(quantity.val())) {
+				skus.push(sku);
+				quantitys.push(parseInt(quantity.val()));
+			}
+		} else {
+			$(function() {
+				$("#dialog-message-quantity").dialog({
+					minWidth : 400,
+					modal : true,
+					buttons : {
+						Ok : function() {
+							$(this).dialog("close");
+							$('#quantity_' + sku).val("");
+							return;
+						}
+					}
+				});
+			});
+		}
+
+	} else {
+		if (parseInt(sku) && parseInt(quantity.val())) {
+			skus.push(sku);
+			quantitys.push(parseInt(quantity.val()));
+		}
+	}
+}
+
+function saveAllItems(sku, quantity, comment, maxQuantity, existencia, business) {
+	$('#loading').bind('ajaxSend', function() {
+		$(this).show();
+	}).bind('ajaxComplete', function() {
+		$(this).hide();
+	});
+	pushItem(sku, quantity, comment, maxQuantity, existencia, business);
+	$.ajax({
+		type : "POST",
+		url : "AddItemsToCart",
+		data : "skus=" + skus + "&quantity=" + quantitys,
+		success : function(response) {
+			$(function() {
+				updateMiniCart();
+				$("#dialog-message-save-all").dialog(
+						{
+							minWidth : 400,
+							modal : true,
+							buttons : {
+								Ok : function() {
+									$(this).dialog("close");
+									$("#Content").load(
+											'/OnlineBSD/cart?cache='
+													+ (new Date()).getTime());
+									return;
+								}
+							}
+						});
+			});
+		},
+		error : function(e) {
+			console.log(e);
+		}
+	});
+}
+
+function emptyCart() {
+	$('#loading').bind('ajaxSend', function() {
+		$(this).show();
+	}).bind('ajaxComplete', function() {
+		$(this).hide();
+	});
+	$.ajax({
+		type : 'POST',
+		url : '/OnlineBSD/emptyCart',
+		success : function(response) {
+			$(function() {
+				updateMiniCart();
+				$("#dialog-message-empty-cart").dialog(
+						{
+							minWidth : 400,
+							modal : true,
+							buttons : {
+								Ok : function() {
+									$(this).dialog("close");
+									$("#Content").load(
+											'/OnlineBSD/cart?cache='
+													+ (new Date()).getTime());
+									return;
+								}
+							}
+						});
+			});
+		},
+		error : function() {
+
+		}
+	});
+}
+
+function sendEmail(input) {
+
+	$('#loading').bind('ajaxSend', function() {
+		$(this).show();
+	}).bind('ajaxComplete', function() {
+		$(this).hide();
+	});
+	console.log($("#email").val());
+	if (!validarEmail($("#email").val())) {
+		$(function() {
+			$("#dialog-message-email").dialog({
+				minWidth : 400,
+				modal : true,
+				buttons : {
+					Ok : function() {
+						$(this).dialog("close");
+						return;
+					}
+				}
+			});
+		});
+		return;
+	}
+	$.ajax({
+		type : "POST",
+		url : "SendMailCart",
+		data : "emailText=" + $("#email").val(),
+		success : function(response) {
+			$("#email").val("");
+			$(function() {
+				$("#dialog-message-email-sent").dialog({
+					minWidth : 400,
+					modal : true,
+					buttons : {
+						Ok : function() {
+							$(this).dialog("close");
+							return;
+						}
+					}
+				});
+			});
+		},
+		error : function(e) {
+			$(function() {
+				$("#dialog-message-email-error").dialog({
+					minWidth : 400,
+					modal : true,
+					buttons : {
+						Ok : function() {
+							$(this).dialog("close");
+							return;
+						}
+					}
+				});
+			});
+		}
+	});
+
+}
+
+function updateCart(input, sku, existencia, max) {
+	$('#loading').bind('ajaxSend', function() {
+		$(this).show();
+	}).bind('ajaxComplete', function() {
+		$(this).hide();
+	});
+
+	if (existencia < parseInt(input.value)) {
+		$(function() {
+			$("#dialog-message-stock").dialog({
+				minWidth : 400,
+				modal : true,
+				buttons : {
+					Ok : function() {
+						$(this).dialog("close");
+						return;
+					}
+				}
+			});
+		});
+		return;
+	}
+
+	if (max > 0 && max < parseInt(input.value)) {
+		$(function() {
+			$("#dialog-message-max").dialog({
+				minWidth : 400,
+				modal : true,
+				buttons : {
+					Ok : function() {
+						$(this).dialog("close");
+						return;
+					}
+				}
+			});
+		});
+		return;
+	}
+	if (parseInt(input.value) > 0) {
+		input.readOnly = true;
+		$.ajax({
+			type : "POST",
+			url : "updateCart",
+			data : "quantity=" + parseInt(input.value) + "&sku=" + sku,
+			success : function(response) {
+				updateMiniCart();
+				input.readOnly = false;
+				$("#Content").load(
+						'/OnlineBSD/cart?cache=' + (new Date()).getTime());
+			},
+			error : function(e) {
+				$(function() {
+					$("#dialog-message-error").dialog({
+						minWidth : 400,
+						modal : true,
+						buttons : {
+							Ok : function() {
+								$(this).dialog("close");
+								return;
+							}
+						}
+					});
+				});
+				input.readOnly = false;
+			}
+		});
+	}
+}
+
+function insertItem(sku, quantity, comment, maxQuantity, existencia, business) {
+	$('#loading').bind('ajaxSend', function() {
+		$(this).show();
+	}).bind('ajaxComplete', function() {
+		$(this).hide();
+	});
+
+	if (maxQuantity != 0 && maxQuantity < parseInt(quantity.val())) {
+		$(function() {
+			$("#dialog-message-maxQuantity-" + sku).dialog({
+				minWidth : 400,
+				modal : true,
+				buttons : {
+					Ok : function() {
+						$(this).dialog("close");
+						return;
+					}
+				}
+			});
+		});
+		return;
+	}
+
+	if ((parseInt(quantity.val()) > 0 && business.val() != 'ODM')
+			|| (parseInt(quantity.val()) > 0
+					&& parseInt(quantity.val()) <= existencia && business.val() == 'ODM')) {
+		$.ajax({
+			type : "POST",
+			url : "insertItemCart",
+			data : "maxQuantity=" + maxQuantity + "&comment=" + comment
+					+ "&quantity=" + quantity.val() + "&sku=" + sku,
+			success : function(response) {
+				updateMiniCart();
+				if (response) {
+					$(function() {
+						$("#dialog-message-success").dialog({
+							minWidth : 400,
+							modal : true,
+							buttons : {
+								Ok : function() {
+									$(this).dialog("close");
+									quantity.val('');
+									return;
+								}
+							}
+						});
+					});
+				}
+			},
+			error : function(e) {
+				console.log(e);
+			}
+		});
+	} else {
+		$(function() {
+			$("#dialog-message-quantity").dialog({
+				minWidth : 400,
+				modal : true,
+				buttons : {
+					Ok : function() {
+						$(this).dialog("close");
+						return;
+					}
+				}
+			});
+		});
+	}
+}
+
+function deleteItem(input, sku) {
+	input.readOnly = true;
+	$('#loading').bind('ajaxSend', function() {
+		$(this).show();
+	}).bind('ajaxComplete', function() {
+		$(this).hide();
+	});
+	$(function() {
+		$("#dialog-message-delete").dialog(
+				{
+					minWidth : 400,
+					modal : true,
+					buttons : {
+						Ok : function() {
+							$(this).dialog("close");
+							$.ajax({
+								type : "POST",
+								url : "deleteItemCart",
+								data : "sku=" + sku,
+								success : function(response) {
+									// we have the response
+									updateMiniCart();
+									input.readOnly = false;
+									console.log(response);
+									$("#Content").load(
+											'/OnlineBSD/cart?cache='
+													+ (new Date()).getTime());
+								},
+								error : function(e) {
+									$(function() {
+										$("#dialog-message-error").dialog({
+											minWidth : 400,
+											modal : true,
+											buttons : {
+												Ok : function() {
+													$(this).dialog("close");
+													return;
+												}
+											}
+										});
+									});
+									input.readOnly = false;
+								}
+							});
+							return;
+						},
+						Cancel : function() {
+							$(this).dialog("close");
+							return;
+						}
+
+					}
+				});
+	});
+}

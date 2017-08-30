@@ -1,0 +1,256 @@
+
+#ContenedorSubNiveles, #menuSubnivel01, #menuSubnivel02, #menuSubnivel03, #menuSubnivel04  { 
+	float:left;
+	min-height: 250px;  
+	max-height: 250px; 
+	width: 180px !important; 
+	word-wrap: break-word; 
+	overflow: auto; 
+	scrollbar-face-color:##A4A4A4 !important;
+  scrollbar-shadow-color:##A4A4A4 !important;
+  scrollbar-highlight-color: #A4A4A4 !important;
+  scrollbar-3dlight-color: ThreeDLightShadow !important;
+  scrollbar-darkshadow-color: #A4A4A4 !important;
+  scrollbar-track-color: Scrollbar !important;
+  scrollbar-arrow-color: ##A4A4A4 !important;
+  margin:0px !important;
+  font-weight:bold;
+  height:250px;
+  background-color:#FFF;
+ }
+#ContenedorSubNiveles {
+	 background-color:#EFEFEF !important;}
+@media (max-width: 800px) {
+	#ContenedorSubNiveles, #menuSubnivel01, #menuSubnivel02, #menuSubnivel03, #menuSubnivel04  { 
+	float:none;
+	position:  absolute;
+	left:0px;
+	width: 180px !important; 
+	word-wrap: break-word; 
+	overflow: auto; 
+	scrollbar-face-color:#A4A4A4 !important;
+  	scrollbar-shadow-color:#A4A4A4 !important;
+  scrollbar-highlight-color: #A4A4A4 !important;
+  scrollbar-3dlight-color: ThreeDLightShadow !important;
+  scrollbar-darkshadow-color: #A4A4A4 !important;
+  scrollbar-track-color: Scrollbar !important;
+  scrollbar-arrow-color: #A4A4A4 !important;
+  margin:0px !important;
+  font-weight:bold;
+  background-color:#999;
+  top: 50px !important;
+ }
+#ContenedorSubNiveles {
+	 background-color:#999 !important;
+	 }
+}
+#ContenedorSubNiveles ul, #menuSubnivel01 ul, #menuSubnivel02 ul, #menuSubnivel03 ul, #menuSubnivel04 ul  {
+    text-align:center;
+	margin:0 ;
+	display:block;
+	background-color:  transparent;
+	padding-left: 0px; 
+	list-style: none;
+	overflow:hidden;
+	padding-left:5px;
+}
+@media (max-width: 800px) {
+	#ContenedorSubNiveles ul, #menuSubnivel01 ul, #menuSubnivel02 ul, #menuSubnivel03 ul, #menuSubnivel04 ul  {
+    
+	padding-left:0px;
+}
+}
+#ContenedorSubNiveles li, #menuSubnivel01 li, #menuSubnivel02 li, #menuSubnivel03 li, #menuSubnivel04 li  {
+    background-color: transparent;
+	display:block;
+	text-align: left;
+	padding-left: 0px; 
+	list-style:  none;
+	margin: 0 auto;
+	/*width: 100px !important;*/
+	background: url(/mx/media/Images/arrows_left_color.gif)0 6px no-repeat;
+	-o-border-radius: 3px 3px 3px 3px;
+	-ms-border-radius:3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius:3px 3px 3px 3px; 
+	border: 0px solid transparent;
+	margin: 0px !important;
+	margin-right: 0px !important;
+	margin-right: 0px !important;
+}
+@media (max-width: 800px) {
+	#ContenedorSubNiveles li, #menuSubnivel01 li, #menuSubnivel02 li, #menuSubnivel03 li, #menuSubnivel04 li  {
+		width: 90% !important;
+		text-align:left !important;
+		-o-border-radius: 0px 0px 0px 0px;
+	-ms-border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    border-radius:0px 0px 0px 0px;
+	}
+}
+#ContenedorSubNiveles li {
+	background:none;
+	font-weight:bold !important;
+}
+div#ContenedorSubNiveles {
+	background-color:#EFEFEF;}
+@media (max-width: 800px) {
+	div#ContenedorSubNiveles {
+	background-color:#999;
+	width:100%;}
+}
+div#menuSubnivel02 li {
+	background-color: #fff/*#FBFBFB*/;}
+@media (max-width: 800px) {
+	div#menuSubnivel02 li {
+	background-color: #999/*#FBFBFB*/;}
+}
+div#menuSubnivel03 li {
+	background-color:#fff  /*#F6F6F6*/;}
+@media (max-width: 800px) {
+	div#menuSubnivel03 li {
+	background-color:#999  /*#F6F6F6*/;}
+}
+div#menuSubnivel04 li {
+	background-color: #fff ;}
+@media (max-width: 800px) {
+	div#menuSubnivel04 li {
+	background-color: #999 ;}
+}
+#ContenedorSubNiveles li a {
+	font-family: Helvetica,Arial,sans-serif;
+    text-decoration:none;	
+    text-shadow: none !important;
+	font-size:12px !important;
+}
+ #menuSubnivel01 li a, #menuSubnivel02 li a, #menuSubnivel03 li a, #menuSubnivel04 li a  {
+	font-family: Helvetica,Arial,sans-serif;
+    text-decoration:none;	
+    text-shadow: none !important;
+	font-size:12px !important;
+}
+#ContenedorSubNiveles li:hover {
+	z-index:100;
+	background: #f6f6f6  !important;
+	color:#fff !important;
+}
+#menuSubnivel01 li:hover, #menuSubnivel02 li:hover, #menuSubnivel03 li:hover, #menuSubnivel04 li:hover {
+	z-index:100;
+	background-image:none !important;
+	background:#bcbcbc  url(/mx/media/Images/arrows_left.gif)0 6px no-repeat !important;
+}
+
+#Departamentos li { 
+	padding-left: 0px; 
+	list-style: none; 
+	width:160px !important;    }
+@media (max-width: 800px) {
+	#Departamentos li { 
+	padding-left: 0px; 
+	list-style: none; 
+	width:600px !important;    }
+}
+.ui-widget {
+	font-family: Helvetica,Arial,sans-serif;
+	color: #000 !important;
+	
+}
+.ui-widget-content {
+	color: #000 !important;
+	font-weight: normal;
+	}
+.ui-widget-content a {
+	/*color:  #C3C;morado poner imagen flecha*/
+}
+
+.ui-corner-all { 
+	color: #000 !important; 
+	padding-left: 5px;}
+
+.ui-draggable .ui-dialog-titlebar {
+	cursor: move;
+}
+ul.ui-menu {
+	background-color: transparent; /*importa contenedor*/
+	display: block;	
+	margin: 0;
+	outline: none;
+	padding: 0px;
+	list-style: none;
+	width: 154px !important;
+	}
+.ui-menu .ui-menu {
+	margin-top: 3px;
+	position: absolute;
+	top: 1px !important;
+}
+
+.ui-menu .ui-menu-item {
+	margin: 0;
+	padding-left:5px;
+	width: 100%;
+	/* support: IE10, see #8844 */
+	background-color:  none;/*importa contenedor*/
+    cursor: pointer;
+	margin: 0px;
+}
+.ui-menu .ui-menu-item a {
+	text-decoration: none;
+	display: block;
+	/*/padding: 0px .4em;*/
+	line-height: 1.5;
+	min-height: 0; /* support: IE7 */
+	font-weight: normal;
+	background-color: transparent; /*importa  */
+	margin: 0px;
+	
+}
+.ui-menu .ui-menu-item a.ui-state-focus,
+.ui-menu .ui-menu-item a.ui-state-active {
+	font-weight: normal;
+	margin: -1px;
+	background-color:#E0E0E0; /*importa para señalar con color los hipervinculos, colocar imagen flecha*/
+	color: #000 !important;
+	width:160px;
+}
+
+/* TR overrides */
+.ui-tabs .ui-tabs-nav {
+	margin: 0;
+	padding: .2em .2em 0;
+}
+.ui-tabs .ui-tabs-nav li {
+	list-style: none;
+	float: left;
+	position: relative;
+	top: 0;
+	margin: 1px .2em 0 0;
+	border-bottom-width: 0;
+	padding: 0;
+	white-space: nowrap;
+	background-color:#C03;/*rojo quemado*/
+}
+.ui-tabs .ui-tabs-nav li a {
+	float: left;
+	padding: .5em 1em;
+	text-decoration: none;
+	
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	margin-bottom: -1px;
+	padding-bottom: 1px;
+	
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled a,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading a {
+	cursor: text;
+	
+}
+.ui-tabs .ui-tabs-nav li a, /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a {
+	cursor: pointer;
+}
+

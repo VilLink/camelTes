@@ -1,0 +1,11 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.officeDepot.camel.QueriesPropertiesConfig",
+      "name": "queries",
+      "type": "com.officeDepot.camel.QueriesPropertiesConfig"
+    }
+  ],
+  "properties": []
+}

@@ -1,0 +1,397 @@
+/******************************ESTILOS SECCION SUPERIOR IMAGENES CON ZOOM********************************/
+
+#box * {
+	margin: 0;
+	padding: 0;
+}
+
+#box img {border: none; max-width: none!important; min-height: none !important; max-height:none !important; }
+
+#box a {outline: none;}
+
+/* Fades in the slideshow. Hides the initial animation on the li tag. Ooops!! */
+
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+		
+	}
+	
+	50% { 
+		opacity: 0;
+	}
+	
+	100% { 
+		opacity: 1;
+	}
+}
+
+#box {
+	text-align: left;
+	max-width:450px;
+	margin: 0;
+	overflow: hidden;
+	-webkit-animation-name: fadeIn; 
+  	-webkit-animation-duration: 3s; 
+  	-webkit-animation-iteration-count: 1;
+  	-webkit-animation-delay: 0s;
+}
+@media(max-width: 300px){
+	#box {
+	max-width:350px;
+	}
+	}
+ul#sliderZoom{
+	-webkit-border-radius: 5px;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	position: relative;
+	max-width:450px;
+	height: 335px;
+	overflow: hidden;
+}
+@media(max-width: 300px){
+	
+	}
+ul#thumb img { 
+	max-height: 100% !important; 
+	 }
+ul#thumb {
+	overflow: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	list-style: none;
+	position: relative;
+	background:none;
+	overflow: auto;
+	max-width:450px;
+	text-align:center;	
+}
+
+ul#thumb a {
+	-webkit-transition: opacity .2s ease-in-out;
+	border: 1px solid #979797;
+	width: 35px;
+	height: 35px;
+	display: block;
+	overflow: hidden;
+	float: right;
+	margin: 10px 0px 0px 10px;
+	opacity: 0.75;
+}
+
+ul#thumb a:hover {
+	opacity: 1;
+} 
+
+ul#sliderZoom li {	
+	max-width:450px;
+	position: absolute;
+	height: 450px;
+	}
+
+ul#sliderZoom li p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: inherit;
+	color: #fff;
+	background: rgba(0, 0, 0, .5);
+	width: 100%;
+}
+
+ul#sliderZoom li p span {
+	line-height: 1.2em;
+	padding: 10px;
+	display: block;
+}
+
+/* Animation for the :target image. Slides the image in. */
+
+@-webkit-keyframes moveTarget {
+	0% {
+		left:-700px;
+		
+	}
+	
+	100% { 
+		left:0px;
+	}
+}
+
+
+ul#sliderZoom li:target {
+	-webkit-animation-name: moveTarget; 
+	-webkit-animation-duration: .5s; 
+	-webkit-animation-iteration-count: 1;
+	top:0px;
+	left: 0px;
+	z-index: 10;
+}
+
+/*
+Animation for the current image. Slides it out the frame and back to the starting position. 
+Adds a lower z-index than the now current image.
+*/
+
+@-webkit-keyframes moveIt {
+	0% {
+		left:0px;
+		
+	}
+	50% {
+		left:700px;
+		
+	}
+	100% { 
+		left:-700px;
+		z-index: 5;
+	}
+}
+
+ul#sliderZoom li:not(:target) {
+	-webkit-animation-name: moveIt; 
+  	-webkit-animation-duration: 1.5s; 
+  	-webkit-animation-iteration-count: 1;
+	top:0px;
+	left: 0px;
+}
+/******************************ESTILOS SECCION INFERIOR  CARRUSEL********************************/
+#divCarousel {
+	/*border: solid 1px #ccc;*/
+	max-width:90%;
+	/*border-radius: 5px;
+	box-shadow: 1px 1px 10px #ccc;*/
+	background:none;
+	margin: 0 auto;
+	margin-top: 10px;
+	text-align:center;
+	}
+#divCarousel .ImgCarrusel img { 
+	width:50px;
+	height: 50px;
+}
+@media(max-width: 850px){
+#divCarousel .ImgCarrusel img { 
+	width:25px;
+	height: 25px;
+	}	
+}
+
+#divCarousel #divIzquierda {
+		width: 32px;
+		height: 70px;
+		float: left;
+		cursor: pointer;
+		background: url(../Images/izquierda.png) center no-repeat;
+	}
+@media(max-width: 920px){
+	#divCarousel #divIzquierda {
+	width: 16px;
+	height: 50px;
+	background: url(../Images/izquierdaPeq.png) center no-repeat;
+	}
+}
+#divCarousel #divIzquierda:hover{
+			background: url(../Images/izquierda-hover.png) center no-repeat;
+		}
+@media(max-width: 920px){
+	#divCarousel #divIzquierda:hover{
+	background: url(../Images/izquierda-hoverPeq.png) center no-repeat;
+	}
+}
+#divCarousel #divDerecha{
+	width: 32px;
+	height: 70px;
+	float: left;
+	cursor: pointer;
+	background: url(../Images/derecha.png) center no-repeat;
+	}
+@media(max-width:  920px){
+	#divCarousel #divDerecha{
+	width: 16px;
+	height: 50px;
+	background: url(../Images/derechaPeq.png) center no-repeat;
+	}
+}
+
+#divCarousel #divDerecha:hover{
+		background: url(../Images/derecha-hover.png) center no-repeat;
+		}
+@media(max-width: 920px){
+	#divCarousel #divDerecha:hover{
+	background: url(../Images/derecha-hoverPeq.png) center no-repeat;
+	}
+}
+
+#divCarousel #divCentro{
+		max-width: 325px;
+		float: left;
+		/*el overflow es quien hace gran parte de la magia*/
+		overflow: hidden;
+		height: 70px;
+	}
+@media(max-width: 850px){
+	#divCarousel #divCentro{
+	max-width: 205px;
+	float: left;
+	/*el overflow es quien hace gran parte de la magia*/
+	overflow: hidden;
+	height: 40px;
+	}
+}
+#divCarousel #divCentro ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	}
+#divCarousel #divCentro ul li{
+	display: inline-block;
+	margin: 10px 5px;
+	border: solid 1px #D8D8D8;
+	border-radius: 3px;
+	background: #fff;
+	text-align: center;
+	padding:0px;
+	}
+#divCarousel #divCentro ul li img{
+	padding: 0 0px;
+	vertical-align:bottom;
+	}
+.clsSalto{
+	clear: both;
+}
+
+ul.ImgCarrusel a {
+	-webkit-transition: opacity .2s ease-in-out;
+	opacity: 0.75;
+}
+
+ul.ImgCarrusel a:hover {
+	opacity: 1;
+} 
+
+/*******************************************************************************/
+
+#divCarouselModel
+{
+	border: solid 1px #ccc;
+	max-width:98%;
+	border-radius: 5px;
+	box-shadow: 1px 1px 10px #ccc;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align:center;
+	position: relative;
+	}
+
+#divCarouselModel .CarruselCentral .ContenedorCarrusel { 
+	width:160px;
+	height: 280px;
+	background-color:transparent;
+}
+
+#divCarouselModel #divIzq {
+		width: 32px;
+		height: 280px;
+		float: left;
+		cursor: pointer;
+		background: url(../Images/izquierda.png) center no-repeat;
+	}
+@media(max-width: 920px){
+	#divCarouselModel #divIzq {
+	width: 16px;
+	height: 280px;
+	background: url(../Images/izquierdaPeq.png) center no-repeat;
+	}
+}
+#divCarouselModel #divIzq:hover{
+			background: url(../Images/izquierda-hover.png) center no-repeat;
+		}
+@media(max-width: 920px){
+	#divCarouselModel #divIzq:hover{
+	background: url(../Images/izquierda-hoverPeq.png) center no-repeat;
+	}
+}
+#divCarouselModel #divDer {
+	width: 32px;
+	height: 280px;
+	float: left;
+	cursor: pointer;
+	background: url(../Images/derecha.png) center no-repeat;
+	}
+@media(max-width:  920px){
+	#divCarouselModel #divDer {
+	width: 16px;
+	height: 280px;
+	background: url(../Images/derechaPeq.png) center no-repeat;
+	}
+}
+
+#divCarouselModel #divDer:hover{
+		background: url(../Images/derecha-hover.png) center no-repeat;
+		}
+@media(max-width: 920px){
+	#divCarouselModel #divDer:hover{
+	background: url(../Images/derecha-hoverPeq.png) center no-repeat;
+	}
+}
+
+#divCarouselModel #divCentroModel {
+		max-width: 850px;
+		float: left;
+		/*el overflow es quien hace gran parte de la magia*/
+		overflow: hidden;
+		height: 290px;
+	}
+@media(max-width: 970px){
+	#divCarouselModel #divCentroModel {
+	max-width: 670px;
+	}
+}
+@media(max-width: 770px){
+	#divCarouselModel #divCentroModel {
+	max-width: 570px;
+	}
+}
+@media(max-width: 654px){
+	
+	#divCarouselModel #divCentroModel {
+	max-width: 390px;
+	}
+}
+@media(max-width: 470px){
+	
+	#divCarouselModel #divCentroModel {
+	max-width: 190px;
+	height: 299px;
+	background-color:transparent;
+	}
+}
+#divCarouselModel #divCentroModel .CarruselCentral {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	}
+#divCarouselModel #divCentroModel .CarruselCentral .ContenedorCarrusel {
+	display: inline-block;
+	margin: 5px 1px;
+	border: none;
+	border-radius: 3px;
+	background: #fff;
+	text-align: center;
+	padding:0px;
+	background-color:transparent;
+	}
+/*#divCarouselModel #divCentroModel ul li img{
+	padding: 0 0px;
+	vertical-align:bottom;
+	}*/
+.clsSaltoModel {
+	clear: both;
+}
+/******************************************************/
+
+

@@ -1,0 +1,167 @@
+function mostrarOrdenes() {
+	buscarOrdenesPendientes();	
+}
+
+function setAllCheck() {  
+	for (i=0;i<document.idTablaOrden.elements.length;i++) { 
+		if(document.idTablaOrden.elements[i].type == "checkbox")
+			if(document.idTablaOrden.authAll.checked == 1)
+				document.idTablaOrden.elements[i].checked=1 ;
+			else if(document.idTablaOrden.authAll.checked == 0)
+					document.idTablaOrden.elements[i].checked=0;
+	} 
+	setAllAuthorization();
+}
+
+function buscarOrdenesPendientes() {
+	$('#loading').bind('ajaxSend', function(){
+		$(this).show();
+	}).bind('ajaxComplete', function(){
+		$(this).hide();
+	});
+	
+	$.ajax({
+        type : "GET",
+        url : "SearchOrdersAuthorization?cache=" (new Date()).getTime(),
+        success : function(response) {
+              $("#Content").html(response); //divOrdenesPendientes
+        },
+        error : function(e) {
+        },
+		cache: false
+  });
+}
+
+function setAuthorization(numOrder) {
+	$('#loading').bind('ajaxSend', function(){
+		$(this).show();
+	}).bind('ajaxComplete', function(){
+		$(this).hide();
+	});
+	
+	$.ajax({
+		type : "POST",
+		url : "SetOrderForAuthorization",
+		data : "order=" + numOrder + "&auth="+document.getElementById(numOrder).checked,
+		success : function (response) {
+			console.log("selection success...");
+		},
+		error : function(e) {
+			console.log('Error' + e);
+		},
+		cache: false
+	});
+}
+
+function setAllAuthorization() {
+	$('#loading').bind('ajaxSend', function(){
+		$(this).show();
+	}).bind('ajaxComplete', function(){
+		$(this).hide();
+	});
+	
+	$.ajax({
+		type : "POST",
+		url : "SetAllOrdersForAuthorization",
+		data : "auth="+document.getElementById('authAll').checked,
+		success : function (response) {
+			console.log("success...");
+		},
+		error : function(e) {
+			alert('Error' + e);
+		},
+		cache: false
+	});
+}
+
+function cancelarOrden(numContract) {
+    $('#loading').bind('ajaxSend', function(){
+		$(this).show();
+	}).bind('ajaxComplete', function(){
+		$(this).hide();
+	});
+    $("#idBtnCancel").prop('disabled', true);
+    $.ajax({
+    	type: "POST",
+    	url: "CancelOrderAuthorization",
+        data: "contract="+numContract+"&cache=" (new Date()).getTime(),
+        success: function(response) {
+        	$("#idBtnCancel").prop('disabled', false);
+        	$("#Content").html(response);
+        },
+        error : function(e) {
+        	console.log('error' + e);
+		},
+		cache: false
+    });
+}
+
+function processAuthOrders() {
+	$("#idBtnAuth").prop('disabled', true);
+	var motivo = $('#motivoAuth').val();
+	var nomUsu = $('#nomUsuAuth').val();
+	$('#loading').bind('ajaxSend', function(){
+		$(this).show();
+	}).bind('ajaxComplete', function(){
+		$(this).hide();
+	});
+	$.ajax({
+		type : "GET",
+		url : "ProcessAuthorizeOrders",
+		data : "motivo=" + motivo + "&nomUsu=" + nomUsu,
+		success : function (response) {
+			$("#idBtnAuth").prop('disabled', false);
+			$("#Content").html(response);
+		},
+		error : function (e) {
+			alert('Error' + e);
+		},
+		cache: false
+	});
+}
+
+function changeFilter(numberContract) {
+	var city = $("#idCityFilter").val();
+	var user = $("#idUserFilter").val();
+	$('#loading').bind('ajaxSend', function(){
+		$(this).show();
+	}).bind('ajaxComplete', function(){
+		$(this).hide();
+	});
+	
+	$.ajax({
+        type : "POST",
+        url : "FilterOrdersAuthorization",
+        data: "city="+city+"&user="+user+"&numberContract=" + numberContract,
+        success : function(response) {
+              $("#Content").html(response);
+        },
+        error : function(e) {
+        },
+		cache: false
+  });
+	
+}
+
+function showOrderDetail(numOrder, numberContract) {
+	var city = $("#idCityFilter").val();
+	var user = $("#idUserFilter").val();
+	$('#loading').bind('ajaxSend', function(){
+		$(this).show();
+	}).bind('ajaxComplete', function(){
+		$(this).hide();
+	});
+	
+	$.ajax({
+		type : "GET",
+		url : "ViewOrderAuthorizationDetailList",
+		data : "orderId=" + numOrder + "&numberContract=" + numberContract + "&userSelected=" + user + "&citySelected=" +city,
+		success : function (response) {
+			$("#Content").html(response); //divDetalleOrden
+		},
+		error : function(e) {
+			console.log('Error' + e);
+		},
+		cache: false
+	});
+}

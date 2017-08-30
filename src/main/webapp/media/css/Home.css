@@ -1,0 +1,37 @@
+#mainContent{float:left;overflow:hidden;width:610px}
+#rightNav{float:left;overflow:hidden;width:150px}
+#dropDownMenuHome{background-color:#e7e7e7;border-right:1px solid #c7c7c7;clear:both;padding-top:10px}
+#dropDownMenuHome P{font-size:10px;margin-left:10px}
+#dropDownMenuHome P.title{color:#c00;font-size:11px;font-weight:700}
+#dropDownMenuHome P.bcenter{margin:10px 0 0;text-align:center}
+#dropDownMenuHome P.navBar{margin-left:0;margin-top:5px}
+#dropDownMenuHome P.bottom{background-color:#FFF;margin:0;padding-left:0;text-align:left}
+#flashDiv{float:left;overflow:hidden;background: #ffffff;width: 610px;height: 200x;text-align: center;}
+#leftDepotNav{float:left;overflow:hidden;width:125px}
+#leftDepotNav .menu{background-color:#e7e7e7;border-right:#c7c7c7 1px solid}
+#leftDepotNav .menu P{color:#666;font-size:10px;margin-left:5px;margin-right:5px}
+#leftDepotNav .menu P.navBar{margin-bottom:5px;margin-left:0;margin-top:5px}
+#leftDepotNav SELECT{border:1px;font-family:Verdana,sans-serif;font-size:10px;margin-left:10px;padding:1px;width:100px}
+.featureBubble{clear:both;margin:10px 5px 5px;width:473px}
+.featureBubble .header{float:left;height:75px;padding-left:14px;width:65px}
+.featureBubble .copy{float:left;padding-left:10px;padding-right:15px;width:350px}
+.featureBubble .titleRed{color:#c00;font-size:18px;font-weight:700}
+.featureBubble .titleBlack{font-size:18px;margin-bottom:12px}
+.featureBubble .subtitle{font-size:10px;text-transform:uppercase}
+.featureBubble P{font-size:11px}
+.featureBubble .link{float:left;font-size:10px;margin-top:10px;text-transform:uppercase}
+#middleColumn{float:left;overflow:hidden;width:485px}
+#mainBottomBubble{clear:both}
+#mainBottomBubble .floatingText{float:left;font-size:11px;padding-left:15px;width:425px}
+#mainBottomBubble .title A{color:#0073cf;font-size:14px;font-weight:700}
+#mainBottomBubble .title A:hover{color:#c00}
+#mainBottomBubble .text{float:left;width:220px}
+#mainBottomBubble .links{margin-left:235px}
+#Promocion1{float:left;overflow:hidden;background: #ffffff;width: 239px;height: 100px;text-align: left;}
+#Promocion2{float:left;overflow:hidden;background: #ffffff;width: 246px;height: 100px;text-align: left;}
+#Promocion3{float:left;overflow:hidden;background: #ffffff;width: 242px;height: 100px;text-align: center;;margin-top:7px}
+#Promocion4{float:left;overflow:hidden;background: #ffffff;width: 242px;height: 100px;text-align: center;;margin-top:7px}
+#promocione{float:center;overflow:hidden;background: #ffffff;width: 485px;height: 130px;text-align: center;;margin-top:7px}
+#palm{float:left;overflow:hidden;background: #ffffff;width: 125px;height: 100px;text-align: left;margin-top:7px}
+#ipod{float:left;overflow:hidden;background: #ffffff;width: 125px;height: 100px;text-align: left;margin-top:7px}
+.border{border: 0px;}
